@@ -36,26 +36,12 @@ std::string find_longest_palindrome(std::string str)
         int w = window - 1;
         for (int i = 0; i < size - w; ++i)
         {
-            // If the characters on the borders of the window are equal, check if the inner word is a palindrome
-            if (str[i] == str[i + w])
-            {
-                dp[w % 3][i] = dp[(w + 1) % 3][i + 1];
-                found = found || dp[w % 3][i];
-            }
-            else
-            {
-                dp[w % 3][i] = false;
-            }
+            // The substring is a palindrome if the characters on the borders of the window are equal
+            // and the inner word is a palindrome
+            dp[w % 3][i] = str[i] == str[i + w] && dp[(w + 1) % 3][i + 1];
+            found = found || dp[w % 3][i];
         }
-        if (found)
-        {
-            successive_fails = 0;
-        }
-        else
-        {
-            successive_fails++;
-        }
-
+        successive_fails = found ? 0 : successive_fails + 1;
         ++window;
 
         // Can't find a palindrome neither with an odd window nor with an even window
@@ -66,7 +52,6 @@ std::string find_longest_palindrome(std::string str)
     }
 
     --window;
-    std::cout << window << ' ' << successive_fails << '\n';
     int successful_window = window - successive_fails;
     std::string result = "";
     // successful window == 1 means only the single characters are palindromes (no palindromic substrings are found)

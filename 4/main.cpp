@@ -84,14 +84,6 @@ int main()
     std::cout << "Enter a string:\n";
     std::string str;
     std::getline(std::cin, str);
-    std::string result = find_longest_palindrome(str);
-    if (result == "")
-    {
-        std::cout << "No palindromes were found\n";
-    }
-    else
-    {
-        std::cout << "The longest palindrome is: " << result << '\n';
-    }
+    std::cout << "The longest palindromic substring is: " << find_longest_palindrome(str) << '\n';
     return 0;
 }

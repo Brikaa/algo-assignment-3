@@ -4,6 +4,10 @@
 std::string find_longest_palindrome(std::string str)
 {
     int size = str.size();
+    if (size == 1)
+    {
+        return str;
+    }
     bool **dp = new bool *[size];
 
     // Allocation
@@ -65,17 +69,18 @@ std::string find_longest_palindrome(std::string str)
     int successful_window = window - successive_fails;
     std::string result = "";
     // successful window == 1 means only the single characters are palindromes (no palindromic substrings are found)
-    if (successful_window > 1)
+    int w = successful_window - 1;
+    for (int i = 0; i < size; ++i)
     {
-        int w = successful_window - 1;
-        for (int i = 0; i < size; ++i)
+        if (dp[w][i])
         {
-            if (dp[w][i])
-            {
-                result = str.substr(i, successful_window);
-                break;
-            }
+            result = str.substr(i, successful_window);
+            break;
         }
+    }
+    if (result == "")
+    {
+        result = str[0];
     }
 
     // De-allocation

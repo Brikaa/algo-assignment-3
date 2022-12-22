@@ -31,12 +31,7 @@ Human* intialize(int& k, int& n, Human* arr){
                std::cout << "Please enter a value greater than or equal to zero : ";
 
         }
-
-
-    // std::cout << "Please enter the size of the array : ";
-    // std::cin >> n;
-    // std::cout << "Please enter the unit range for the policemen : ";
-    // std::cin >> k;
+        
     std::string choice;
     arr = new Human[n];
     for (int i = 0; i<n; i++){

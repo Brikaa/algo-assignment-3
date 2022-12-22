@@ -1,0 +1,43 @@
+test case #1 :
+6
+2
+P
+T 
+P
+T 
+P 
+T
+output = 3
+
+test case #2 :
+5 
+1 
+P 
+T 
+T 
+P 
+T
+output = 2
+
+test case #3 :
+3
+1
+P
+T
+P
+output = 1
+
+test case #4 :
+10 
+3 
+P 
+T 
+T 
+T 
+P 
+P 
+T 
+P
+T
+T
+output = 4

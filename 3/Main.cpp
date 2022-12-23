@@ -7,8 +7,7 @@ Human* intialize(int& k, int& n, Human* arr){
         while(true){
             while(!(std::cin >> n)){
                 std::cin.clear();
-                std::cin.ignore();
-                std::cin.ignore();
+                std::cin.ignore(100,'\n');
                 std::cout << "Please enter a valid numeric input : ";
             }
             if(n >= 0)
@@ -21,8 +20,7 @@ Human* intialize(int& k, int& n, Human* arr){
         while(true){
             while(!(std::cin >> k)){
                 std::cin.clear();
-                std::cin.ignore();
-                std::cin.ignore();
+                std::cin.ignore(100,'\n');
                 std::cout << "Please enter a valid numeric input : ";
             }
             if(k >= 0)

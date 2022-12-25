@@ -2,6 +2,7 @@
 #define __Graph__
 #include <iostream>
 #include <vector>
+#include <climits>
 
 class Graph
 {

@@ -2,7 +2,7 @@
 #include <string>
 #include "Human.h"
 
-Human* intialize(int& k, int& n, Human* arr){
+Human* initialize(int& k, int& n){
         std::cout << "Please enter the size of the array : ";
         while(true){
             while(!(std::cin >> n)){
@@ -29,9 +29,9 @@ Human* intialize(int& k, int& n, Human* arr){
                std::cout << "Please enter a value greater than or equal to zero : ";
 
         }
-        
+
     std::string choice;
-    arr = new Human[n];
+    Human* arr = new Human[n];
     for (int i = 0; i<n; i++){
         std::cout << "Please enter the P for policeman and T for thief : ";
         std::cin >> choice;
@@ -55,8 +55,7 @@ Human* intialize(int& k, int& n, Human* arr){
 }
 int main() {
     int k, n, max = 0;
-    Human* arr;
-    arr = intialize(k,n, arr);
+    Human* arr = initialize(k,n);
     std::cout << "\n";
 
     if(n == 0 || n == 1){
